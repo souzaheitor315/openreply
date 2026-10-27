@@ -1,0 +1,6 @@
+# Point SITE_DOMAIN DNS at the VM's public IPv4 before starting.
+# Caddy obtains and renews a public TLS certificate automatically.
+{$SITE_DOMAIN} {
+  encode zstd gzip
+  reverse_proxy web:3000
+}
